@@ -1,0 +1,75 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.buttonList {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.form {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    flex-flow: wrap;
+    padding-bottom: 1rem;
+}
+
+.input {
+    flex: 1 1 45%;
+    align-self: flex-start;
+}
+
+.inputFull {
+    flex: 1 1 100%;
+    align-self: flex-start;
+}
+
+.selectOption {
+    flex: 1 1 33%;
+    align-self: flex-start;
+    max-width: 33%
+}
+
+.save {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.filter {
+    display: flex;
+    padding-bottom: 1rem;
+    gap: 1rem;
+}
+
+.pb {
+    padding-bottom: 1rem;
+}
+
+.numberSelect {
+    display: flex;
+    height: 22px;
+}
+
+@media screen and (max-width: 800px) {
+    .input {
+        flex: 1 1 100%;
+    }
+
+    .selectOption {
+        flex: 1 1 50%;
+        align-self: flex-start;
+        max-width: 50%
+    }
+}

@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.outletWithMenu {
+    width: calc(100vw - 15rem - 1px);
+    max-height: calc(100% - 12rem - 26px - 1rem);
+    overflow: auto;
+}
+
+.outletWithoutMenu {
+    width: 100vw;
+    max-height: calc(100% - 12rem);
+    overflow: auto;
+}
+
+
+@media screen and (max-width: 800px) {
+    .outletWithMenu {
+        max-height: calc(100% - 6rem - 26px - 1rem);
+        width: 100vw;
+    }
+
+    .outletWithoutMenu {
+        width: 100vw;
+        max-height: calc(100% - 6rem);
+    }
+}

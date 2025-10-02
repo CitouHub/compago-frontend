@@ -1,0 +1,40 @@
+.top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+}
+
+.filter {
+    display: flex;
+    padding-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.title {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.control {
+    display: flex;
+    justify-content: right;
+    gap: 1rem;
+}
+
+.filterInput {
+    width: 50%;
+}
+
+.listToolbarContent {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 800px) {
+    .filterInput {
+        width: 100%;
+    }
+}

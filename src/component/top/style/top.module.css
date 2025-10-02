@@ -1,0 +1,102 @@
+.topBanner {
+    height: 10rem;
+    width: 100%;
+    background-size: cover;
+}
+
+.topBannerImage {
+    background-image: url('../../../assets/crew.jpg');
+    background-position: center;
+}
+
+.logoImage {
+    display: none;
+}
+
+.topRoute {
+    width: calc(100%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    display: flex;
+    justify-content: space-between;
+}
+
+.topRouteItem {
+    display: flex;
+    padding: 0.5rem;
+    align-items: center;
+}
+
+    .topRouteItem > span {
+        display: block;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+        .topRouteItem > span > a {
+            font-size: 18px;
+            font-weight: 500;
+            text-decoration: none;
+            color: black;
+        }
+
+.topRouteMobileShow {
+    display: none;
+}
+
+.version {
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+    .version > span {
+        margin-bottom: 0.25rem;
+        margin-left: 0.5rem;
+    }
+
+.back {
+    cursor: pointer;
+    padding-right: 0.5rem;
+}
+
+.link:hover {
+    color: var(--color-primary);
+}
+
+@media screen and (max-width: 800px) {
+    .logoImage {
+        display: block;
+        height: 5rem;
+    }
+
+    .logoImageContainer {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 1rem;
+    }
+    
+    .topBanner {
+        height: 6rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .topRouteMobileHide {
+        display: none;
+    }
+
+    .topRouteMobileShow {
+        display: block;
+    }
+
+    .topRouteItem {
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+    }
+
+    .version > span {
+        margin-bottom: 0.25rem;
+        margin-right: 0.5rem;
+    }
+}

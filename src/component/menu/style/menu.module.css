@@ -1,0 +1,63 @@
+.title {
+    padding-left: 1rem;
+    padding-top: 1rem;
+    font-weight: 600;
+}
+
+.menuWrapper {
+    width: 15rem;
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menuOptions {
+    overflow: auto;
+}
+
+.menuNoWidthScroll {
+    overflow-x: hidden;
+}
+
+.menuWidth {
+    width: 15rem;
+}
+
+.menuIcon {
+    margin-left: 0.5rem;
+    margin-right: -1rem;
+}
+
+.menuItem {
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+}
+
+.section {
+    padding-top: 0.5rem;
+}
+
+.selectedItem {
+    background: linear-gradient(180deg, white, lightgrey);
+}
+
+.logo {
+    padding: 0rem;
+}
+
+.logoImage {
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+    .menuWrapper {
+        width: 0rem;
+        display: none;
+    }
+
+    .menuWidth {
+        width: 0rem;
+    }
+}
