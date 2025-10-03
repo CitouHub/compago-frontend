@@ -2,14 +2,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { userFieldAddDefinitions } from "./user-field-add-definition";
 import { userFieldUpdateDefinitions } from "./user-field-update-definition";
-import { User } from "../../model/user";
-import { useToast } from "../../../context/toast/toast-provider";
-import { addUser, deleteUser, updateUser } from "../../service/user-service";
+import { User } from "../../../model/user";
+import { useToast } from "../../../../context/toast/toast-provider";
+import { addUser, deleteUser, updateUser } from "../../../service/user-service";
 import { 
     USER_MANAGEMENT_EDIT, 
     USER_MANAGEMENT_LIST, 
-    PARAMETER_USER_ID } from "../../../infrastructure/route";
-import BaseForm from "../../../component/form/base-form";
+    PARAMETER_USER_ID } from "../../../../infrastructure/route";
+import BaseForm from "../../../../component/form/base-form";
 
 export default function UserHandler({
     newModel,

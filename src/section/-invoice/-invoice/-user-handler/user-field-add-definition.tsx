@@ -1,5 +1,5 @@
-import { FieldDefinition } from "../../../component/form/field-definition";
-import { userRoleOptions } from "../../../utils/form-select-input-options";
+import { FieldDefinition } from "../../../../component/form/field-definition";
+import { userRoleOptions } from "../../../../utils/form-select-input-options";
 
 export const userFieldAddDefinitions: FieldDefinition[] = [
     {

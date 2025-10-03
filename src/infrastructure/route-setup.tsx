@@ -15,14 +15,14 @@ import {
 } from "./route";
 import { RouteCategory } from './route-category';
 import Home from '../section/home';
-import UserList from '../section/-user/-user-list/user-list';
-import UserView from '../section/-user/user-view';
-import TagList from '../section/-user/-user-list/user-list';
-import TagView from '../section/-user/user-view';
-import InvoiceList from '../section/-user/-user-list/user-list';
-import InvoiceView from '../section/-user/user-view';
+import InvoiceList from '../section/-invoice/-tag/-tag-list/tag-list';
+import InvoiceView from '../section/-invoice/-tag/tag-view';
 import { Role } from '../common/role';
 import { hasRouteAccess } from './route-access';
+import UserList from '../section/-invoice/-invoice/-user-list/user-list';
+import UserView from '../section/-invoice/-invoice/user-view';
+import TagList from '../section/-invoice/-tag/-tag-list/tag-list';
+import TagView from '../section/-invoice/-tag/tag-view';
 
 export const ROUTE_CATEGORY_DASHBOARD_TITLE = "Dashboard";
 export const ROUTE_CATEGORY_ACCOUNT_TITLE = "Account management";

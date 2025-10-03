@@ -130,11 +130,6 @@ export default function Top() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [location.pathname, cache.keys]);
 
-    function getTopBannerImage(): string {
-        const image = Math.round(new Date().getTime() / 1000 / (60 * 15)) % 5 + 1;
-        return styles[`topBannerImage${image}`];
-    }
-
     const goBack = () => {
         const backPage = history[history.length - 2];
         if (backPage.match('login')) {
@@ -158,7 +153,7 @@ export default function Top() {
                         <img className={styles.logoImage} src={logo} alt='Compago Invoice Management logo' />
                     </div>
                 </div>
-                {auth.userSecurityCredentials !== null && <div className={styles.topRoute}>
+                {auth.userSecurityCredentials !== null && auth.userSecurityCredentials !== undefined && <div className={styles.topRoute}>
                     <div className={[styles.topRouteItem, styles.topRouteMobileShow].join(' ')} style={{ padding: '0rem'}} >
                         {accessibleRoutes.length > 1 && <MenuMobile />}
                     </div>

@@ -40,7 +40,7 @@ export default function MenuDesktop() {
 
     return (
         <React.Fragment>
-            {auth.userSecurityCredentials !== null && <div className={styles.menuWrapper}>
+            {auth.userSecurityCredentials !== null && auth.userSecurityCredentials !== undefined && <div className={styles.menuWrapper}>
                 <div className={styles.menuNoWidthScroll}>
                     <div className={[styles.logo, styles.menuWidth].join(' ')}>
                         <div style={{ padding: '1.5rem' }}>

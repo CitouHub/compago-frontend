@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { User } from "../model/user";
-import { getUser } from "../service/user-service";
-import ViewLoader from "../../component/misc/view-loader";
+import { User } from "../../model/user";
+import { getUser } from "../../service/user-service";
+import ViewLoader from "../../../component/misc/view-loader";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { Box, Tab } from "@mui/material";
-import { useCache } from "../../context/cache/cache-provider";
-import { PARAMETER_USER_ID } from "../../infrastructure/route";
+import { useCache } from "../../../context/cache/cache-provider";
+import { PARAMETER_USER_ID } from "../../../infrastructure/route";
 import UserHandler from "./-user-handler/user-handler";
 
 export const USER_TAB_STATE: string = "USER_TAB_STATE";

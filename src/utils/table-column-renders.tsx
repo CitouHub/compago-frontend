@@ -20,6 +20,10 @@ export const renderActive = (active: boolean) => {
     }
 }
 
+export const renderColor = (color: string) => {
+    return <div style={{ width: '100%', height: '100%', borderRadius: '5px', backgroundColor: color}}></div>
+}
+
 export const renderDate = (date?: Dayjs | undefined, includeTime?: boolean | undefined) => {
     const format = includeTime === true ? 'YYYY-MM-DD HH:mm:ss' : 'YYYY-MM-DD'
     return date !== undefined ? dayjs(date).format(format) : '';
