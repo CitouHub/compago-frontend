@@ -1,19 +1,26 @@
 import { FieldDefinition } from "../../../component/form/field-definition";
 import { userRoleOptions } from "../../../utils/form-select-input-options";
 
-export const userFieldDefinitions: FieldDefinition[] = [
+export const userFieldAddDefinitions: FieldDefinition[] = [
     {
-        id: "name",
-        name: "Name",
+        id: "username",
+        name: "Username",
+        type: "text",
+        required: true,
+        disabled: false
+    },
+        {
+        id: "password",
+        name: "Password",
         type: "text",
         required: true,
         disabled: false
     },
     {
-        id: "role",
+        id: "roleId",
         name: "Role",
         type: "select",
-        required: false,
+        required: true,
         disabled: false,
         values: userRoleOptions()
     }

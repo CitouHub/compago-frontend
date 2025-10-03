@@ -3,7 +3,8 @@ import { Role } from "../../common/role";
 export interface User {
     id?: number | undefined,
     username?: string | undefined,
-    roleId?: Role | undefined
+    roleId?: Role | undefined,
+    roleName?: string | undefined
 }
 
 export const sortUserList = (users: User[]) => {

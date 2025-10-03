@@ -8,7 +8,7 @@ import { useAuth } from "../context/auth/auth-provider";
 import styles from "./style/home.module.css";
 import commonStyles from "./style/common.module.css";
 import { 
-    ROUTE_CATEGORY_USER_TITLE, 
+    ROUTE_CATEGORY_ACCOUNT_TITLE, 
     ROUTE_CATEGORY_INVOICE_TITLE, 
     ROUTE_SETUP, 
     getAccessibleRoutes } from "../infrastructure/route-setup";
@@ -34,7 +34,7 @@ export default function Home() {
 
     const getHomeRouteSetup = () => {
         const homeRouteSetup = [] as RouteCategory[];
-        homeRouteSetup.push({ title: ROUTE_CATEGORY_USER_TITLE, routes: [] })
+        homeRouteSetup.push({ title: ROUTE_CATEGORY_ACCOUNT_TITLE, routes: [] })
         homeRouteSetup.push({ title: ROUTE_CATEGORY_INVOICE_TITLE, routes: [] })
 
         ROUTE_SETUP.forEach(_ => {

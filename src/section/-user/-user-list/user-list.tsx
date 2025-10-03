@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { columns } from "./user-list-column-definition";
+import { userListColumns } from "./user-list-column-definition";
 import commonStyles from "../../style/common.module.css";
 import { User } from "../../model/user";
 import { getUsers } from "../../service/user-service";
@@ -42,7 +42,7 @@ export default function UserList() {
             <BaseList
                 storageKey="USER"
                 rows={users}
-                columns={columns}
+                columns={userListColumns}
                 loading={loading}
                 localeText={{ noRowsLabel: "No users" }}
                 getRowId={(row) => row?.id}

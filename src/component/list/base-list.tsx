@@ -53,7 +53,6 @@ export const BaseList = (
         exportName?: string | undefined
     }
 ) => {
-    const [rowSelectionModel, setRowSelectionModel] = useState<any>([]);
     const [daySpanInvalid, setDaySpanInvalid] = useState<InvalidDaySpan | undefined>();
 
     const cache = useCache();
@@ -76,10 +75,6 @@ export const BaseList = (
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.maxDaySpan]);
-
-    useEffect(() => {
-        setRowSelectionModel([]);
-    }, [props.rows]);
 
     useEffect(() => {
         if (props.to !== undefined && 
@@ -189,8 +184,6 @@ export const BaseList = (
             <DataGrid
                 {...props}
                 rows={props.rows ?? []}
-                onRowSelectionModelChange={setRowSelectionModel}
-                rowSelectionModel={rowSelectionModel}
                 autoHeight={true}
                 initialState={{
                     pagination: {
@@ -221,8 +214,8 @@ export const BaseList = (
                         )
                     }
                 }}
-                disableRowSelectionOnClick={props.disableRowSelectionOnClick === false ? false : true}
-                onStateChange={(state: GridState) => saveState(state)}
+                // disableRowSelectionOnClick={props.disableRowSelectionOnClick === false ? false : true}
+                // onStateChange={(state: GridState) => saveState(state)}
             />
         </React.Fragment>
     )

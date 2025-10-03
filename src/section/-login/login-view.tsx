@@ -9,7 +9,10 @@ import logo from "../../assets/logo.png";
 import styles from "../style/login.module.css";
 
 export default function LoginView() {
-    const [userSecurityCredentials, setUserSecurityCredentials] = useState<UserSecurityCredentials>({} as UserSecurityCredentials);
+    const [userSecurityCredentials, setUserSecurityCredentials] = useState<UserSecurityCredentials>({
+        username: "",
+        password: ""
+    } as UserSecurityCredentials);
 
     const auth = useAuth();
 
@@ -51,7 +54,7 @@ export default function LoginView() {
                     startIcon={<LoginIcon />}
                     variant="contained"
                     loading={auth.loading}
-                    disabled={auth.loading === true || userSecurityCredentials.username === undefined || userSecurityCredentials.password === undefined}
+                    disabled={auth.loading === true || userSecurityCredentials.username?.length === 0 || userSecurityCredentials.password?.length === 0}
                     onClick={() => handleLogin()}
                 >
                     Login

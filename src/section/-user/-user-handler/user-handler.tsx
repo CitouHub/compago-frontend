@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { userFieldDefinitions } from "./user-field-definition";
+import { userFieldAddDefinitions } from "./user-field-add-definition";
+import { userFieldUpdateDefinitions } from "./user-field-update-definition";
 import { User } from "../../model/user";
 import { useToast } from "../../../context/toast/toast-provider";
 import { addUser, deleteUser, updateUser } from "../../service/user-service";
@@ -78,7 +79,7 @@ export default function UserHandler({
             name={user.username}
             model={user}
             setModel={setUser}
-            fields={userFieldDefinitions}
+            fields={newModel === true ? userFieldAddDefinitions : userFieldUpdateDefinitions}
             submitEntity={handleSubmit}
             deleteEntity={!newModel ? handleDelete : undefined}
             submitting={submitting}

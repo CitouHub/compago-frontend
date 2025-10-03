@@ -25,7 +25,7 @@ import { Role } from '../common/role';
 import { hasRouteAccess } from './route-access';
 
 export const ROUTE_CATEGORY_DASHBOARD_TITLE = "Dashboard";
-export const ROUTE_CATEGORY_USER_TITLE = "User management";
+export const ROUTE_CATEGORY_ACCOUNT_TITLE = "Account management";
 export const ROUTE_CATEGORY_INVOICE_TITLE = "Invoice management";
 
 export const ROUTE_SETUP: RouteCategory[] = [
@@ -44,7 +44,7 @@ export const ROUTE_SETUP: RouteCategory[] = [
         ]
     },
     {
-        title: ROUTE_CATEGORY_USER_TITLE,
+        title: ROUTE_CATEGORY_ACCOUNT_TITLE,
         routes: [
             {
                 index: false,

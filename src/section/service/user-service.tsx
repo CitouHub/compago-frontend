@@ -7,8 +7,8 @@ export function login(username: string, password: string): Promise<Role> {
     const requestOptions = {
         method: "POST",
         headers: {
-            "Username": `${username}`,
-            "Password": `${password}`,
+            "username": `${username}`,
+            "password": `${password}`,
             "Content-Type": "application/json"
         }
     };
@@ -20,35 +20,35 @@ export function login(username: string, password: string): Promise<Role> {
 }
 
 export function getUsers(): Promise<User[]> {
-    return fetch(`${import.meta.env.VITE_API_URL}/v1//user/list`, requestOptions(HttpMethod.GET))
+    return fetch(`${import.meta.env.VITE_API_URL}/v1/user/list`, requestOptions(HttpMethod.GET))
         .then(response => {
             return handleResponse<User[]>(response)
         });
 }
 
 export function getUser(userId: number): Promise<User> {
-    return fetch(`${import.meta.env.VITE_API_URL}/v1//user/${userId}`, requestOptions(HttpMethod.GET))
+    return fetch(`${import.meta.env.VITE_API_URL}/v1/user/${userId}`, requestOptions(HttpMethod.GET))
         .then(response => {
             return handleResponse<User>(response)
         });
 }
 
 export function addUser(user: User): Promise<User> {
-    return fetch(`${import.meta.env.VITE_API_URL}/v1//user`, requestOptions(HttpMethod.POST, user))
+    return fetch(`${import.meta.env.VITE_API_URL}/v1/user`, requestOptions(HttpMethod.POST, user))
         .then(response => {
             return handleResponse<User>(response)
         });
 }
 
 export function updateUser(user: User): Promise<User> {
-    return fetch(`${import.meta.env.VITE_API_URL}/v1//user`, requestOptions(HttpMethod.PUT, user))
+    return fetch(`${import.meta.env.VITE_API_URL}/v1/user`, requestOptions(HttpMethod.PUT, user))
         .then(response => {
             return handleResponse<User>(response)
         });
 }
 
 export function deleteUser(userId: number): Promise<void> {
-    return fetch(`${process.env.REACT_APP_API_URL}/v1/user/${userId}`, requestOptions(HttpMethod.DELETE))
+    return fetch(`${import.meta.env.VITE_API_URL}/v1/user/${userId}`, requestOptions(HttpMethod.DELETE))
         .then(response => {
             return handleResponseNoContent(response)
         });

@@ -24,10 +24,6 @@ export default function App() {
         </div>
     }
 
-    const apiUrl = import.meta.env.VITE_API_URL;
-
-    console.log(apiUrl)
-
     return (
         <React.Fragment>
             {<ErrorBoundary FallbackComponent={UnknownError} >

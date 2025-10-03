@@ -15,13 +15,7 @@ import { ROUTE_SETUP } from "../../infrastructure/route-setup";
 let AuthContext = React.createContext<AuthContextType>(null!);
 
 export default function AuthProvider({ children }: { children: React.ReactNode }) {
-    let lastUserSecurityCredentials: UserSecurityCredentials | null = JSON.parse(localStorage.getItem(COMPAGO_USER_SECURITY_CREDENTIALS)!);
-    if (lastUserSecurityCredentials !== null) {
-        lastUserSecurityCredentials = null;
-        localStorage.removeItem(COMPAGO_USER_SECURITY_CREDENTIALS);
-    }
-
-    const [userSecurityCredentials, setUserSecurityCredentials] = useState<UserSecurityCredentials | null>(lastUserSecurityCredentials);
+    const [userSecurityCredentials, setUserSecurityCredentials] = useState<UserSecurityCredentials | null | undefined>();
     const [loading, setLoading] = useState<boolean>(false);
 
     const navigate = useNavigate();
