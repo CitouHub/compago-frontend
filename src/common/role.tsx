@@ -4,4 +4,6 @@ export enum Role {
     NoRole = 99
 }
 
-export const roles = Object.values(Role).filter((v) => !isNaN(Number(v))) as number[]
+export const roles = Object.values(Role)
+    .filter((v) => (v) !== Role.NoRole)
+    .filter((v) => !isNaN(Number(v))) as number[]
