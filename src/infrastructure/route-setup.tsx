@@ -11,16 +11,16 @@ import {
     TAG_MANAGEMENT_ADD,
     TAG_MANAGEMENT_EDIT,
     INVOICE_MANAGEMENT_LIST,
-    INVOICE_MANAGEMENT_EDIT
+    INVOICE_MANAGEMENT_ADD_TAGS
 } from "./route";
 import { RouteCategory } from './route-category';
 import Home from '../section/home';
-import InvoiceList from '../section/-invoice/-tag/-tag-list/tag-list';
-import InvoiceView from '../section/-invoice/-tag/tag-view';
+import InvoiceList from '../section/-invoice/-invoice/-invoice-list/invoice-list';
+import InvoiceView from '../section/-invoice/-invoice/invoice-view';
 import { Role } from '../common/role';
 import { hasRouteAccess } from './route-access';
-import UserList from '../section/-invoice/-invoice/-user-list/user-list';
-import UserView from '../section/-invoice/-invoice/user-view';
+import UserList from '../section/-account/-user/-user-list/user-list';
+import UserView from '../section/-account/-user/user-view';
 import TagList from '../section/-invoice/-tag/-tag-list/tag-list';
 import TagView from '../section/-invoice/-tag/tag-view';
 
@@ -111,14 +111,14 @@ export const ROUTE_SETUP: RouteCategory[] = [
                 paths: [INVOICE_MANAGEMENT_LIST],
                 icon: <ReceiptIcon />,
                 component: <InvoiceList />,
-                description: "Under Invoices submits you can see and tag invoices."
+                description: "Under Invoices you can see and tag invoices."
             },
             {
                 index: false,
                 menu: false,
-                name: "Invoice tag",
+                name: "Invoice tags",
                 roles: [Role.Admin, Role.User],
-                paths: [INVOICE_MANAGEMENT_EDIT],
+                paths: [INVOICE_MANAGEMENT_ADD_TAGS],
                 component: <InvoiceView />
             }
         ]
