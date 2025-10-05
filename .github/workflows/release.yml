@@ -5,13 +5,13 @@ on:
     types: [published]
 
 env:
-  NODE_VERSION: '24'
+  NODE_VERSION: '22'
   API_URL: wa-compago-api-cjdaamdebggmgecv.northeurope-01.azurewebsites.net
   APP_NAME: wa-compago
 
 jobs:
   build_and_deploy_job:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
       - uses: actions/checkout@v3
