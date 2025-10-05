@@ -46,11 +46,12 @@ jobs:
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
-          name: ${{ APP_NAME }}
+          name: ${{ env.APP_NAME }}
 
       - name: Deploy to Azure Static Web App
         uses: Azure/static-web-apps-deploy@v1
         with:
+          app_location: /
           azure_static_web_apps_api_token: ${{ secrets.DEPLOYMENT_TOKEN }}
           action: "upload"
 
@@ -58,4 +59,4 @@ jobs:
         if: always()
         uses: geekyeggo/delete-artifact@v5
         with:
-            name: ${{ APP_NAME }}
+            name: ${{ env.APP_NAME }}
