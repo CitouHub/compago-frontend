@@ -6,8 +6,8 @@ on:
 
 env:
   NODE_VERSION: '22'
-  API_URL: wa-compago-api-cjdaamdebggmgecv.northeurope-01.azurewebsites.net
-  APP_NAME: wa-compago
+  API_URL: https://black-cliff-0c0068703.2.azurestaticapps.net
+  APP_NAME: swa-compago-ui
 
 jobs:
   build_and_deploy_job:
