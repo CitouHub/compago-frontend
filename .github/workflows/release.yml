@@ -62,3 +62,17 @@ jobs:
           npm -v
           pwd
           ls -ls
+      
+  windows_buld:
+    runs-on: windows-latest
+    name: Build and Deploy Job
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+          lfs: false
+      - name: build
+        run: |
+          npm install vite@7.1.7
+          npm install node@24.6.0
+          npm run build
