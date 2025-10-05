@@ -12,8 +12,6 @@ export function handleResponse<TResponse>(response: Response) {
         return handleFailedResponse(response);
     } else {
         return response.text().then((json) => {
-            console.log(json)
-            console.log(JSON.parse(json, dateTimeReviver))
             if (json !== '') {
                 return JSON.parse(json, dateTimeReviver);
             }

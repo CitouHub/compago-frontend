@@ -52,10 +52,6 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
                 username: username
             } as UserSecurityCredentials
 
-            console.log(user)
-            console.log("asdf", user)
-            console.log(cred)
-
             localStorage.setItem(COMPAGO_USER_SECURITY_CREDENTIALS, JSON.stringify(cred));
             setUserSecurityCredentials(cred!);
             setLoading(false);

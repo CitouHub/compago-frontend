@@ -13,7 +13,6 @@ import { getInvoices } from "../../../service/invoice-service";
 import { SupportedExternalSource, supportedExternalSources } from "../../../../common/supported-external-source";
 import BaseForm from "../../../../component/form/base-form";
 import { invoiceFilterFieldDefinitions } from "./invoice-filter-field-definition";
-import { FieldDefinition } from "../../../../component/form/field-definition";
 
 interface InvoiceFilter {
     from: Dayjs,
@@ -57,20 +56,6 @@ export default function InvoiceList() {
         });
     }, [filter]);
 
-    const getFieldDefinitions = (): FieldDefinition[] => {
-        if (loading) {
-            invoiceFilterFieldDefinitions.find(_ => _.id === "from")!.disabled = true;
-            invoiceFilterFieldDefinitions.find(_ => _.id === "to")!.disabled = true;
-            invoiceFilterFieldDefinitions.find(_ => _.id === "currency")!.disabled = true;
-        } else {
-            invoiceFilterFieldDefinitions.find(_ => _.id === "from")!.disabled = false;
-            invoiceFilterFieldDefinitions.find(_ => _.id === "to")!.disabled = false;
-            invoiceFilterFieldDefinitions.find(_ => _.id === "currency")!.disabled = false;
-        }
-
-        return invoiceFilterFieldDefinitions;
-    }
-
     const openEdit = (supportedExternalSource: SupportedExternalSource, invoiceId: string, currency: string) => {
         const invoice = invoices.find(_ => _.id === invoiceId && _.source === supportedExternalSource);
         cache.update({ key: PARAMETER_INVOICE_ID, value: `${invoice?.source}${invoice?.id}`});
@@ -89,7 +74,7 @@ export default function InvoiceList() {
                     name="Invoice filter"
                     model={filter}
                     setModel={setFilter}
-                    fields={getFieldDefinitions()}
+                    fields={invoiceFilterFieldDefinitions}
                 />
             </div>
             <BaseList

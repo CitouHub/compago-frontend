@@ -41,7 +41,7 @@ export const renderRoles = (roles: Role[]) => {
 export const renderTags = (invoiceTags?: InvoiceTag[] | undefined) => {
     return <div>
         {invoiceTags?.map(_ => {
-            return <span style={{ 
+            return <span key={`${_.tagId}`} style={{ 
                 width: '100%', 
                 height: '100%', 
                 borderRadius: '5px', 
