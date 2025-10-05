@@ -42,6 +42,7 @@ jobs:
       - name: build
         run: |
           npm install vite@7.1.7
+          npm install node@24.6.0
           npm run build
       - name: Build And Deploy
         id: builddeploy
