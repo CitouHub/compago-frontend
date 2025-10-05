@@ -1,0 +1,61 @@
+name: Compago release
+
+on:
+  release:
+    types: [published]
+
+env:
+  NODE_VERSION: '24'
+  API_URL: wa-compago-api-cjdaamdebggmgecv.northeurope-01.azurewebsites.net
+  APP_NAME: wa-compago
+
+jobs:
+  build_frontend:
+    name: UI Build
+    runs-on: windows-2022
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+  
+      - name: Set up Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+        env:
+          VITE_API_URL: ${{ env.API_URL }}
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.APP_NAME }}
+          path: build
+
+  deploy_frontend:
+    name: UI Deploy
+    runs-on: ubuntu-24.04
+    needs: build_frontend
+
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ APP_NAME }}
+
+      - name: Deploy to Azure Static Web App
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.DEPLOYMENT_TOKEN }}
+          action: "upload"
+
+      - name: Delete build artifact
+        if: always()
+        uses: geekyeggo/delete-artifact@v5
+        with:
+            name: ${{ APP_NAME }}
