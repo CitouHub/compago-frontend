@@ -34,7 +34,7 @@ export default function App() {
                                 <CacheBuster
                                     currentVersion={"1.0.0"}
                                     onCacheClear={() => {}}
-                                    isEnabled={process.env.NODE_ENV === 'production'}
+                                    isEnabled={true}
                                     isVerboseMode={false}
                                     metaFileDirectory={'.'}
                                     loadingComponent={<LoadingPrompt />}

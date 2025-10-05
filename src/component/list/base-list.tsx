@@ -5,7 +5,6 @@ import {
     GridCsvGetRowsToExportParams,
     GridFilterState,
     GridSortingState,
-    GridState,
     GridToolbarColumnsButton,
     GridToolbarContainer,
     GridToolbarFilterButton,
@@ -96,11 +95,6 @@ export const BaseList = (
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.from, props.to, props.maxDaySpan])
-
-    const saveState = (state: GridState) => {
-        localStorage.setItem(`${props.storageKey}_${LIST_FILTER_STATE_SUFFIX}`, JSON.stringify(state.filter));
-        localStorage.setItem(`${props.storageKey}_${LIST_SORTING_STATE_SUFFIX}`, JSON.stringify(state.sorting));
-    }
 
     function CustomExportToolbar() {
         const apiRef = useGridApiContext();

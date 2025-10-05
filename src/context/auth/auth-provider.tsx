@@ -45,12 +45,16 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
 
     const signIn = (username: string, password: string, redirectTo: string) => {
         setLoading(true);
-        login(username, password).then(roleId => {
+        login(username, password).then(user => {
             let cred = {
-                roleId: roleId,
+                roleId: user.roleId!,
                 password: password,
                 username: username
             } as UserSecurityCredentials
+
+            console.log(user)
+            console.log("asdf", user)
+            console.log(cred)
 
             localStorage.setItem(COMPAGO_USER_SECURITY_CREDENTIALS, JSON.stringify(cred));
             setUserSecurityCredentials(cred!);

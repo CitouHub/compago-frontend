@@ -1,7 +1,6 @@
 import { GridColDef } from "@mui/x-data-grid";
 import { renderDate, renderTags } from "../../../../utils/table-column-renders";
 import { SupportedExternalSource } from "../../../../common/supported-external-source";
-import { InvoiceTag } from "../../../model/invoice-tag";
 
 export const invoiceListColumns: GridColDef[] = [
     { field: 'source', headerName: 'Source', flex: 0.5, renderCell: (params) => { return SupportedExternalSource[params.row.source] } },

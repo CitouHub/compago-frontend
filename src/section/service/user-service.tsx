@@ -1,9 +1,8 @@
-import { Role } from "../../common/role";
 import { HttpMethod, requestOptions } from "../../utils/api/request-options";
 import { handleResponse, handleResponseNoContent } from "../../utils/api/response-handler";
 import { User } from "../model/user";
 
-export function login(username: string, password: string): Promise<Role> {
+export function login(username: string, password: string): Promise<User> {
     const requestOptions = {
         method: "POST",
         headers: {
@@ -15,7 +14,7 @@ export function login(username: string, password: string): Promise<Role> {
 
     return fetch(`${import.meta.env.VITE_API_URL}/v1/login`, requestOptions)
         .then(response => {
-            return handleResponse<Role>(response)
+            return handleResponse<User>(response)
         });
 }
 

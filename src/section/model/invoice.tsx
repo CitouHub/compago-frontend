@@ -1,7 +1,6 @@
 import { Dayjs } from "dayjs";
 import { InvoiceTag } from "./invoice-tag";
 import { SupportedExternalSource } from "../../common/supported-external-source";
-import { Tag } from "./tag";
 
 export interface Invoice {
     id?: string | undefined,
