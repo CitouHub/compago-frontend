@@ -4,48 +4,23 @@ on:
   release:
     types: [published]
 
-env:
-  NODE_VERSION: '22'
-  API_URL: https://black-cliff-0c0068703.2.azurestaticapps.net
-  APP_NAME: swa-compago-ui
-
 jobs:
-  # build_and_deploy_job:
-  #   runs-on: ubuntu-latest
-  #   name: Build and Deploy Job
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #       with:
-  #         submodules: true
-  #         lfs: false
-  #     - name: Build And Deploy
-  #       id: builddeploy
-  #       uses: Azure/static-web-apps-deploy@v1
-  #       with:
-  #         azure_static_web_apps_api_token: ${{ secrets.DEPLOYMENT_TOKEN }}
-  #         repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
-  #         action: "upload"
-  #         ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-  #         # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-  #         app_location: "/" # App source code path
-  #         output_location: "build" # Built app content directory - optional
-  #         ###### End of Repository/Build Configurations ######
-
   build_and_deploy_job:
     runs-on: ubuntu-latest
-    name: Build and Deploy Job
+    name: Build and Deploy
     steps:
       - uses: actions/checkout@v3
         with:
           submodules: true
           lfs: false
-      - name: build
+      - name: Setup vite/node
         run: |
           npm install vite@7.1.7
           npm install node@24.6.0
+      - name: Build
+        run: |
           npm run build
-      - name: Build And Deploy
-        id: builddeploy
+      - name: Deploy
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.DEPLOYMENT_TOKEN }}
@@ -54,25 +29,3 @@ jobs:
           app_location: "dist" 
           output_location: "" 
           skip_app_build: true
-          
-      - name: Info
-        if: always()
-        run: |
-          node -v
-          npm -v
-          pwd
-          ls -ls
-      
-  windows_buld:
-    runs-on: windows-latest
-    name: Build and Deploy Job
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          submodules: true
-          lfs: false
-      - name: build
-        run: |
-          npm install vite@7.1.7
-          npm install node@24.6.0
-          npm run build
