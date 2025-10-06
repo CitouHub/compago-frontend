@@ -33,7 +33,7 @@ export const invoiceNoConversionFieldDefinitions: FieldDefinition[] = [
         id: "selectedTagIds",
         name: "Tags",
         type: "multi-select",
-        required: true,
+        required: false,
         disabled: false
     }
 ];

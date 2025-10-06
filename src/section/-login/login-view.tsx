@@ -40,6 +40,7 @@ export default function LoginView() {
                     sx={{ paddingBottom: '1rem', width: '100%' }}
                     id="password"
                     label="Password"
+                    type="password"
                     value={userSecurityCredentials.password}
                     disabled={auth.loading}
                     fullWidth={true}

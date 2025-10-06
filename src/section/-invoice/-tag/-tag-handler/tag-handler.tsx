@@ -38,8 +38,10 @@ export default function TagHandler({
             }).catch((error) => {
                 if (error?.apiErrorResponse?.errorCode === 409) {
                     toast.addToast(`The name ${tag.name} already exists`, "error");
+                } else if (error?.apiErrorResponse?.errorCode === 409) {
+                    toast.addToast(`The color must be in the format of #XXXXXX`, "error");
                 } else {
-                    toast.addToast(`Unable to create tag`, "error");
+                    toast.addToast(`Unable to update tag ${tag.name}`, "error");
                 }
                 setSubmitting(false);
             });
@@ -51,6 +53,8 @@ export default function TagHandler({
             }).catch((error) => {
                 if (error?.apiErrorResponse?.errorCode === 409) {
                     toast.addToast(`The name ${tag.name} already exists`, "error");
+                } else if (error?.apiErrorResponse?.errorCode === 409) {
+                    toast.addToast(`The color must be in the format of #XXXXXX`, "error");
                 } else {
                     toast.addToast(`Unable to update tag ${tag.name}`, "error");
                 }
